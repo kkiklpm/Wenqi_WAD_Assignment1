@@ -50,8 +50,8 @@ CountryOrCity(query)
 ```
 ### Explanation:
 - Search hotels by either country or city
--`query`: The country or city name to search for `string`
--`return`: List of hotels matching the country or city, or a message indicating no hotels found
+- `query`: The country or city name to search for `string`
+- `return`: List of hotels matching the country or city, or a message indicating no hotels found
 
 ## searchByStars
 ```js
