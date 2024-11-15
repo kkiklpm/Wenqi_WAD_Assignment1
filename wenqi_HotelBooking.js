@@ -43,9 +43,9 @@ module.exports = {
 
   // Book a hotel where each booking will have a record of a unique booking id, hotel name, date, and guest name
   bookHotel(hotelName, guestName) {
-    const hotelToBook = hotels.find(hotel => hotel.name.toLowerCase() === hotelName.toLowerCase());
+    const hotel = hotels.find(hotel => hotel.name.toLowerCase() === hotelName.toLowerCase());
     // check if the hotel the user entered is valid, or else display an error message
-    if (!hotelToBook) {
+    if (!hotel) {
       return `No hotel found with the name "${hotelName}"`;
     }
 
@@ -55,7 +55,7 @@ module.exports = {
     const newBooking = {
       // all the details of the booking
       bookingId,
-      hotelName: hotelToBook.name,
+      hotelName: hotel.name,
       guestName,
       bookedDate,
       status: "Confirmed", // set the default status when booked
@@ -63,7 +63,7 @@ module.exports = {
 
     bookings.push(newBooking);
 
-    return `Booking successful! Booking ID: ${bookingId}, Hotel: ${hotelToBook.name}, Guest: ${guestName}, Date: ${bookedDate}`;
+    return `Booking successful! Booking ID: ${bookingId}, Hotel: ${hotel.name}, Guest: ${guestName}, Date: ${bookedDate}`;
     // message to display all the details when the booking was successful
   },
 
